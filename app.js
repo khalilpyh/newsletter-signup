@@ -7,9 +7,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mailchimp = require("@mailchimp/mailchimp_marketing");
-
-//listing ID: c282788d7c
-//API key: 7f8011d4f89b8f8978d064ed799b58a4-us13
+const mailchimpKey = require("./keys.js");
 
 //initialize express
 const app = express();
@@ -18,7 +16,7 @@ app.use(express.static("public")); //use local css and images
 
 //set up Mailchimp
 mailchimp.setConfig({
-  apiKey: "7f8011d4f89b8f8978d064ed799b58a4-us13",
+  apiKey: mailchimpKey.apiKey,
   server: "us13",
 });
 
@@ -33,7 +31,7 @@ app.post("/", function (req, res) {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
   const email = req.body.email;
-  const listID = "c282788d7c";
+  const listID = mailchimpKey.listID;
 
   //create a new user base on given information
   const newUser = {
