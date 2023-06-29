@@ -1,5 +1,5 @@
 # newsletter-signup
 A newsletter signup web app.
 
-#tools
+# tools
 express.js, html, css, Mailchimp API
