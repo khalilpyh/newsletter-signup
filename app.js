@@ -30,7 +30,7 @@ app.post("/", function (req, res) {
   const email = req.body.email;
   const listID = "c282788d7c";
 
-  //create a new user base on given infomation
+  //create a new user base on given information
   const newUser = {
     members: [
       {
